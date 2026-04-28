@@ -6,6 +6,8 @@ https://docs.docker.com/engine/install/ubuntu/
  
 sudo docker build -t sqlapp .
 
+sudo docker images
+
 Install Docker Engine on Ubuntu
 Jumpstart your client-side server applications with Docker Engine on Ubuntu. This guide details prerequisites and multiple methods to install Docker Engine on Ubuntu.
  
