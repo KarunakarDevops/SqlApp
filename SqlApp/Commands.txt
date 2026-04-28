@@ -1,1 +1,28 @@
 
+1. Install Docker on Ubuntu via the following URL
+https://docs.docker.com/engine/install/ubuntu/
+ 
+2. The following command can be used to build a custom image
+ 
+sudo docker build -t sqlapp .
+
+Install Docker Engine on Ubuntu
+Jumpstart your client-side server applications with Docker Engine on Ubuntu. This guide details prerequisites and multiple methods to install Docker Engine on Ubuntu.
+ 
+1. Install the Azure CLI via the following URL
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
+ 
+2. First log into the Azure container registry
+ 
+sudo az acr login --name appregistry300030 --username appregistry300030 --password
+ 
+3. Then tag your image
+ 
+sudo docker tag sqlapp appregistry300030.azurecr.io/sqlapp
+ 
+4. Then push the image to the Azure Container registry
+ 
+sudo docker push appregistry300030.azurecr.io/sqlapp
+Install the Azure CLI on Linux | Microsoft Learn
+Learn how to install and run the Azure CLI on Linux manually. You can install the Azure CLI on Linux computers with one command or a step-by-step process.
+ 
