@@ -8,6 +8,7 @@ namespace SqlApp
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddTransient<IProductService, ProductService>();
 
             var app = builder.Build();
 
