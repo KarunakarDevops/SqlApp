@@ -1,0 +1,11 @@
+# Restart web app using azure cli
+az webapp restart --name demowebapparmapp2345678 --resource-group karuna-rg
+
+# Restart web app using azure cli
+az webapp stop --name demowebapparmapp2345678 --resource-group karuna-rg
+
+# Delete resources
+az resource delete -g karuna-rg -n "sqlservrgsh456789/appdb" --resource-type "Microsoft.Sql/servers/databases"
+az resource delete -g karuna-rg -n "sqlservrgsh456789" --resource-type "Microsoft.Sql/servers"
+az resource delete -g karuna-rg -n "plansdhj345565678" --resource-type "Microsoft.Web/serverFarms"
+az resource delete -g karuna-rg -n "demowebapparmapp2345678" --resource-type "Microsoft.Web/sites"
