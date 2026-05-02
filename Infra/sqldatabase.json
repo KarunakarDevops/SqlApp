@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlAdminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The administrator password for the SQL server."
+            }
+        },
+        "sqlAdminLogin": {
+            "type": "string",
+            "metadata": {
+                "description": "The administrator login for the SQL server."
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2024-11-01-preview",
+            "name": "sqlservrgsh456789",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "administratorLogin": "[parameters('sqlAdminLogin')]",
+                "administratorLoginPassword": "[parameters('sqlAdminPassword')]"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "apiVersion": "2024-11-01-preview",
+            "name": "[format('{0}/{1}', 'sqlservrgsh456789', 'appdb')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Basic",
+                "tier": "Basic"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', 'sqlservrgsh456789')]"
+            ]
+        }
+    ],
+    "outputs": {}
+}
