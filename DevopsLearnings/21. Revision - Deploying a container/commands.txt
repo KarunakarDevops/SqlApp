@@ -30,7 +30,7 @@ Jumpstart your client-side server applications with Docker Engine on Ubuntu. Thi
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
  
 2. First log into the Azure container registry
- 
+
 sudo az acr login --name appregistry300030 --username appregistry300030 --password
  2oWgrdyo74F7NQFhLTepqOnQHnWF9EDs1liUoPMhb7YNviimT20GJQQJ99CDACGhslBEqg7NAAACAZCROXAE
 3. Then tag your image
@@ -42,4 +42,8 @@ sudo docker tag sqlapp appregistry300030.azurecr.io/sqlapp
 sudo docker push appregistry300030.azurecr.io/sqlapp
 Install the Azure CLI on Linux | Microsoft Learn
 Learn how to install and run the Azure CLI on Linux manually. You can install the Azure CLI on Linux computers with one command or a step-by-step process.
+
+az container create -g devops-grp --name appinstance20030 
+--cpu 1 --memory 1  --ports 80 --ip-address Public 
+--image registry57767.azurecr.io/sqlappdocker:latest --registry-username registry57767 --registry-password XeVWwKmmKD2IAS34A8B8i7E+MWJlneju
  
