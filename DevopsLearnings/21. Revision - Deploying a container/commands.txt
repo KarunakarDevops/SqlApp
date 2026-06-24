@@ -1,6 +1,9 @@
 
 - Install DOcker on a Virtual machine
-- Publish .NET application onto the container
+- Publish .NET application onto the VM
+- Create custom image
+- Publish image to container registry
+- Use that image and deploy azure contianer or K8s
 
 1. Install Docker on Ubuntu via the following URL
 https://docs.docker.com/engine/install/ubuntu/
