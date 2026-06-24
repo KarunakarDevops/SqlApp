@@ -1,4 +1,7 @@
 
+- Install DOcker on a Virtual machine
+- Publish .NET application onto the container
+
 1. Install Docker on Ubuntu via the following URL
 https://docs.docker.com/engine/install/ubuntu/
  
