@@ -1,7 +1,16 @@
 
-- Install DOcker on a Virtual machine
-- Publish .NET application onto the VM
-- Create custom image
+- Install Docker on a Virtual machine Linux and copy the publish code onto the Linux machine using a tool called WinSCP
+
+- Place docker file in the solution directory
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY  . .
+EXPOSE 80
+ENTRYPOINT ["dotnet", "SqlApp.dll"]
+
+- Publish .NET application onto the your local machine and copy the publish content to Linux machine
+- Create custom custom image
 - Publish image to container registry
 - Use that image and deploy azure contianer or K8s
 
