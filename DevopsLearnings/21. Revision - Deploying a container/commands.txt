@@ -45,7 +45,7 @@ https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 Install the Azure CLI on Linux | Microsoft Learn
 Learn how to install and run the Azure CLI on Linux manually. You can install the Azure CLI on Linux computers with one command or a step-by-step process.
 
-
+-- Create release pipeline and cli task with below code
 az container create -g devops-grp --name appinstance20030 
 --cpu 1 --memory 1  --ports 80 --ip-address Public 
 --image registry57767.azurecr.io/sqlappdocker:latest --registry-username registry57767 --registry-password XeVWwKmmKD2IAS34A8B8i7E+MWJlneju
