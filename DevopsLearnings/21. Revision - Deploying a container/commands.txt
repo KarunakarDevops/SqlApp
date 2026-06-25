@@ -1,7 +1,7 @@
 
-- Install Docker on a Virtual machine Linux and copy the publish code onto the Linux machine using a tool called WinSCP
-
-- Place docker file in the solution directory
+- Install Docker on a Virtual machine Linux
+- Place docker file in the solution directory in visual studio
+- Publish code in visual studio and copy the publish code onto the Linux machine using a tool called WinSCP, along with dockerfile
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
@@ -11,13 +11,13 @@ ENTRYPOINT ["dotnet", "SqlApp.dll"]
 
 - Publish .NET application onto the your local machine and copy the publish content to Linux machine
 - Create custom custom image
-- Publish image to container registry
-- Use that image and deploy azure contianer or K8s
+- Push image to container registry
+- Use that image and run a container in azure container apps or K8s
 
 1. Install Docker on Ubuntu via the following URL
 https://docs.docker.com/engine/install/ubuntu/
  
-2. The following command can be used to build a custom image
+2. build a custom image
  
 sudo docker build -t sqlapp .
 
@@ -29,17 +29,19 @@ Jumpstart your client-side server applications with Docker Engine on Ubuntu. Thi
 1. Install the Azure CLI via the following URL
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
  
-2. First log into the Azure container registry
+2. Push image to container registry
+ - 2.1 First log into the Azure container registry
+    sudo az acr login --name appregistry300030 --username appregistry300030 --password
+     2oWgrdyo74F7NQFhLTepqOnQHnWF9EDs1liUoPMhb7YNviimT20GJQQJ99CDACGhslBEqg7NAAACAZCROXAE
 
-sudo az acr login --name appregistry300030 --username appregistry300030 --password
- 2oWgrdyo74F7NQFhLTepqOnQHnWF9EDs1liUoPMhb7YNviimT20GJQQJ99CDACGhslBEqg7NAAACAZCROXAE
-3. Then tag your image
+  - 2.2 Then tag your image
  
-sudo docker tag sqlapp appregistry300030.azurecr.io/sqlapp
+     sudo docker tag sqlapp appregistry300030.azurecr.io/sqlapp
  
-4. Then push the image to the Azure Container registry
+   - 2.3 Then push the image to the Azure Container registry
  
-sudo docker push appregistry300030.azurecr.io/sqlapp
+     sudo docker push appregistry300030.azurecr.io/sqlapp
+
 Install the Azure CLI on Linux | Microsoft Learn
 Learn how to install and run the Azure CLI on Linux manually. You can install the Azure CLI on Linux computers with one command or a step-by-step process.
 
